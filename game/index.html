@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Emberfall Grove</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='42' fill='%23ff9a3c'/></svg>">
+</head>
+<body>
+<div id="stage">
+  <canvas id="game" width="1280" height="720" aria-label="Emberfall Grove playfield"></canvas>
+
+  <div id="hud" class="hidden" aria-hidden="true">
+    <div id="hud-left"><div id="hearts"></div></div>
+    <div id="hud-center"><div id="wave-label">Wave 1</div></div>
+    <div id="hud-right">
+      <div class="hud-stat"><span class="hud-icon">✦</span><span id="ember-count">0</span></div>
+      <div class="hud-stat hud-sub"><span id="shadow-count">0</span> shadows left</div>
+    </div>
+  </div>
+
+  <div id="banner" class="hidden"></div>
+
+  <section id="screen-title" class="screen">
+    <div class="title-ember"></div>
+    <h1 class="game-title">Emberfall<br>Grove</h1>
+    <p class="tagline">The last lantern is lit. The shadows are coming for it.</p>
+    <div class="howto">
+      <div class="howto-row"><kbd>W A S D</kbd> / <kbd>← ↑ ↓ →</kbd><span>drift the wisp</span></div>
+      <div class="howto-row"><kbd>Mouse</kbd><span>aim the light</span></div>
+      <div class="howto-row"><kbd>Click</kbd> / <kbd>Space</kbd><span>cast a bolt</span></div>
+      <div class="howto-row"><kbd>P</kbd><span>pause</span><kbd style="margin-left:1.2rem">M</kbd><span>mute</span></div>
+    </div>
+    <button id="btn-start" class="big-button">Kindle the Lantern</button>
+    <p class="footnote">Survive 8 waves. Gather ✦ embers. Do not let them snuff you out.</p>
+  </section>
+
+  <section id="screen-upgrade" class="screen hidden">
+    <h2 class="upgrade-title">The lantern offers a boon</h2>
+    <p class="upgrade-sub">Choose one</p>
+    <div id="upgrade-cards"></div>
+  </section>
+
+  <section id="screen-end" class="screen hidden">
+    <div id="end-glyph"></div>
+    <h2 id="end-title"></h2>
+    <p id="end-text"></p>
+    <div id="end-stats"></div>
+    <button id="btn-again" class="big-button">Rekindle</button>
+  </section>
+
+  <section id="screen-pause" class="screen hidden">
+    <h2 class="pause-title">The grove holds its breath</h2>
+    <p class="upgrade-sub">P to resume · M to mute</p>
+  </section>
+</div>
+
+<script type="module" src="js/main.js"></script>
+</body>
+</html>
